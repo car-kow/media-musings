@@ -9,21 +9,21 @@
 body {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   height: 100vh;
-  background-color: orange;
+  background: linear-gradient(darkred, orange);
   padding: 0.5rem;
 }
 	
 div.wrapper {
-  max-width: 64rem;
-  margin-left: auto;
-  margin-right: auto;
-  border: 5px solid darkred;
-  box-shadow: 10px 5px 5px rgb(104, 43, 43);
+  max-width: 960px;
+  margin: 1em auto 0 auto;
+  border: 5px solid black;
+  box-shadow: 10px 5px 5px rgb(90, 40, 40);
   background-color: white;
 }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 
@@ -31,7 +31,7 @@ img {
 ---------------------------------------*/
 /* ⬇ Entire header area */
 header {
-  background-color: lightgray;
+  background-color: grey;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +43,7 @@ header {
 
 /* ⬇ Contains both the h1 and h2 */
 header div.site-name { 
-  
+  color: white;
 }
 
 .luxurious-roman-regular {
@@ -60,11 +60,12 @@ header h1 {
 /* ⬇ The h1's link */
 header h1 a {
 	text-decoration: none;
-	color: black;
+	color: lightgray;
 }
 
 header h2 {
-  font-size: 137.50%;
+  font-size: 125%;
+  margin-top: .5rem
 }
 
 
@@ -92,13 +93,13 @@ nav.topnav a {
 	text-transform: uppercase;
 	display: block;
 	text-decoration: none;
-	color: black; /* ← you can change this */
+	color: white; /* ← you can change this */
   transition: all 0.75s ease-in-out;
 }
 
 /* ⬇ Nav link hover effect */
 nav.topnav a:hover {
-	background-color: ghostwhite; /* ← you can change this */
+	background-color: lightgray; /* ← you can change this */
 	border-radius: 2rem;
 }
 
@@ -121,7 +122,7 @@ article.blog {
 /* ⬇ Headline for the blog */
 article.blog h2 { 
   font-size: 150%;
-  border-bottom: 5px solid black;
+  border-bottom: 3px solid black;
 }
 /* ⬇ Text in the blog */
 article.blog p { /* ← blog text */
@@ -131,19 +132,23 @@ article.blog p { /* ← blog text */
 
 /* ⬇ This controls both asides */
 main.homepage aside { 
-  
+  background-color: lightgray;
+  border-radius: 2em;
+  padding: .5em;
 }
 
 /* ⬇ Recent aside */
 main.homepage aside.recent {
   grid-row: 1/2;
   grid-column: 4/5;
+  margin: .5em;
 }
 
 /* ⬇ Links aside*/
 main.homepage aside.links {
   grid-row: 2/3;
   grid-column: 4/5;
+  margin: .5em;
 }
 
 /* ⬇ Headlines at the top of the asides*/
@@ -161,16 +166,17 @@ main.homepage aside ul {
 /* ⬇ List items in the unordered list */
 main.homepage aside li { 
   margin-bottom: 0.5rem;
+  
 }
 
 /* ⬇ Link text in the asides */
 main.homepage aside li a { 
-  
+  color: darkred;
 }
 
 /* ⬇ Aside hover effect */
 main.homepage aside li a:hover { 
-  color: darkred;
+  color: red;
 }
 
 
@@ -182,7 +188,9 @@ section.campus	{
   grid-column: 1/5;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1rem
+  gap: 1rem;
+  padding: 1em;
+  background-color: lightgray;
 }	
 
 /* ⬇ This applies to each building section */
@@ -208,7 +216,7 @@ section.campus img {
 
 /* ⬇ Caption text under each building */
 section.campus figcaption {
-  font-size: 90%;
+  font-size: 80%;
 }
 
 
@@ -216,8 +224,9 @@ section.campus figcaption {
 ---------------------------------------*/
 
 footer {
-  background-color: white;
-  padding: 1rem
+  color: white;
+  background-color: gray;
+  padding: 1em 2em;
 }
 
 footer small { 
@@ -227,7 +236,11 @@ footer small {
 
 /* ⬇ The link in the footer */
 footer a {
-  
+  color: darkred;
+}
+
+footer a:hover {
+  color: red;
 }
 
 
@@ -238,7 +251,7 @@ footer a {
 
 @media (max-width: 768px) {
   div.wrapper {
-    min-width: 95%;
+    width: 95%;
   }
 
   img {
@@ -261,25 +274,31 @@ footer a {
 
   article.blog {
     grid-row: 1/2;
+    grid-column: 1/3;
   }
 
   main.homepage aside.recent {
-    grid-column: 1;
-    grid-row: 2
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-left: 1em;
+    margin-right: 1em;
   }
 
   main.homepage aside.links {
-    grid-column: 2;
-    grid-row: 2;
+    grid-column: 2/3;
+    grid-row: 2/3;
+        margin-left: 1em;
+    margin-right: 1em;
   }
 
   section.campus {
+    grid-column: 1/3;
     grid-template-columns: 1fr 1fr 1fr;
   }
 
   section.campus figure {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-gap: 1em;
     align-items: center;
   }
@@ -290,6 +309,7 @@ footer a {
 
   section.campus figcaption {
    grid-column: 2;
+   font-size: 105%;
   }
 
   article.blog h2 {
@@ -314,7 +334,8 @@ footer a {
     font-size: 150%;
   }
 
-  section.campus figcaption {
+  footer {
+    font-size: 120%;
   }
 }
 
@@ -325,12 +346,13 @@ footer a {
 
 @media (max-width: 480px) {
   div.wrapper {
-    max-width: 100%;
+    width: 100%;
     margin: none;
   }
 
   header {
     margin: none;
+    padding: 1em;
   }
 
   nav.topnav {
@@ -355,7 +377,7 @@ footer a {
   }
 
   article.blog {
-    grid-template-columns: 1fr;
+    grid-column: 1/2;
     line-height: 1.4;
   }
 
@@ -365,6 +387,7 @@ footer a {
 
   section.campus {
     grid-template-columns: 1fr;
+    gap: 1em;
   }
 
   section.campus h3 {
@@ -373,7 +396,7 @@ footer a {
 
   section.campus figure {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
     background-color: lightgray;
     padding-right: 1em;
     border-radius: 1rem;
@@ -384,7 +407,6 @@ footer a {
   }
 
   section.campus figcaption {
-    grid-column: 2/3;
     font-size: 150%;
     line-height: 1.2;
   }
